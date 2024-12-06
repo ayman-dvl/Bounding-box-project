@@ -30,19 +30,20 @@ The dataset we used was taken from roboflow . It is a labelised data with a YOLO
 
 For production environments, creation of a virtual environment and Scripts activation...
 
-'''sh
+```sh
 pip install pipreqs
 python -m venv (name of virtual environement)
 .\(name of virtual environment)\Scripts\activate
-pip install -r requirements.txt'''
+pip install -r requirements.txt
+```
 
 
 
 Streamlit Deployment for the Models.
 
-sh
+```sh
 streamlit run app.py
-
+```
 
 
 
