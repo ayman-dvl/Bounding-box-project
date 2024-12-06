@@ -1,13 +1,13 @@
 #Read_The_Doc
 
-## Supply chain Optimization, Boxing and shelfing
+## Stock management: Box identification and codebar reader
 
 
 
 
 
 The base of this project is to take non-damaged boxes and store them into a shelf that contains enough space for that box to be packed.
-The approach would be divided into the creation of three CNN detection models and a Batch number scanner :
+The approach would be divided into the creation of three CNN detection models (only one is included so far) and a Batch number scanner :
 
 - Box Detection (ensure there's a box at the entry before processing to check whether its damaged or not)
 - Batch Code scanner (to scan the barcode of each entering box)
@@ -17,42 +17,24 @@ The approach would be divided into the creation of three CNN detection models an
 ## Features
 
 
-- Import a HTML file and watch it magically convert to Markdown
-- Drag and drop images (requires your Dropbox account be linked)
-- Import and save files from GitHub, Dropbox, Google Drive and One Drive
-- Drag and drop markdown and HTML files into Dillinger
-- Export documents as Markdown, HTML and PDF
-
 The dataset we used was taken from roboflow . It is a labelised data with a YOLOv11 format
 
 > Links of datasets
-> formatting syntax is to make it as readable
-> as possible. The idea is that a
-> Markdown-formatted document should be
-> publishable as-is, as plain text, without
-> looking like it's been marked up with tags
-> or formatting instructions.
-
-
-
-
+[dataset_1](https://universe.roboflow.com/yolov7-scbtt/box-detection-xuvru/dataset/1)
+[dataset_2](https://universe.roboflow.com/ece4191-xcxot/cardboard-box-detection-mxqjh/dataset/1)
+[dataset_3](https://universe.roboflow.com/yolov3tiny/box-detection-f04xv/dataset/3)
 
 
 
 ## Installation
-Install the dependencies .
-
-sh
-pip install tensorflow
-pip install pytorch
-and other dependencies
-
 
 For production environments, creation of a virtual environment and Scripts activation...
 
 sh
+pip install pipreqs
 python -m venv (name of virtual environement)
 .\(name of virtual environment)\Scripts\activate
+pip install -r requirements.txt
 
 
 
@@ -60,8 +42,6 @@ Streamlit Deployment for the Models.
 
 sh
 streamlit run app.py
-gotta add the image of the interface
-127.0.0.1:8000
 
 
 
