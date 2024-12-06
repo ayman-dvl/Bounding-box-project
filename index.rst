@@ -1,67 +1,102 @@
-Stock Management: Box Identification and Barcode Reader
-========================================================
+.. Project Name documentation master file, created by
+   sphinx-quickstart on YYYY-MM-DD.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-This project automates the management of stock by identifying, scanning, and storing boxes in an appropriate shelf. The key components include box detection, batch code scanning, damaged box detection, and shelf space detection.
+===================================================
+Project Name
+===================================================
 
-Overview
---------
+**Description:**  
+A brief description of your project and its purpose.
 
-The project is divided into four main steps:
+**Author(s):**  
+Your Name or Team Name.
 
-1. **Box Detection**:
-   Ensures the presence of a box at the entry before proceeding to check if it is damaged.
-   
-2. **Batch Code Scanner**:
-   Scans the barcode of each entering box for tracking and inventory management.
-   
-3. **Damaged Box Detection**:
-   A dataset of damaged boxes is used. If a box is not detected as damaged, it is assumed to be non-damaged.
+**Version:**  
+v1.0.0
 
-4. **Shelf Space Detection**:
-   Predicts if a shelf has enough space to store the non-damaged box.
+**License:**  
+Specify the license type (e.g., MIT, Apache 2.0).
 
-Datasets
---------
+Table of Contents
+=================
 
-The labeled datasets used for training and testing were sourced from Roboflow in YOLOv11 format:
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
-- `dataset_1`: Box Detection  
-  `https://universe.roboflow.com/yolov7-scbtt/box-detection-xuvru/dataset/1`
-  
-- `dataset_2`: Cardboard Box Detection  
-  `https://universe.roboflow.com/ece4191-xcxot/cardboard-box-detection-mxqjh/dataset/1`
+   introduction
+   installation
+   usage
+   contributing
+   api_reference
+   faq
 
-- `dataset_3`: Box Detection  
-  `https://universe.roboflow.com/yolov3tiny/box-detection-f04xv/dataset/3`
+Introduction
+============
+
+Provide an overview of the project, its goals, and its use cases.
+
+Key Features
+------------
+- Feature 1
+- Feature 2
+- Feature 3
 
 Installation
-------------
+============
 
-Follow these steps to set up the environment for the project:
+Provide step-by-step instructions on how to install the project.
 
-1. Create a virtual environment and activate it:
+.. code-block:: bash
 
-   .. code-block:: sh
-   
-      python -m venv (name of virtual environment)
-      .\(name of virtual environment)\Scripts\activate
+   pip install your-project
 
-2. Install required dependencies:
+Usage
+=====
 
-   .. code-block:: sh
-   
-      pip install pipreqs
-      pip install -r requirements.txt
+Explain how to use your project, with examples.
 
-Deployment
-----------
+.. code-block:: python
 
-Use Streamlit to deploy the models. Run the following command:
+   from your_project import main_function
+   main_function()
 
-.. code-block:: sh
-   
-   streamlit run app.py
+Contributing
+============
 
-Thank You!
-----------
-We appreciate your attention and hope this project meets your expectations!
+Outline how others can contribute to the project. Include guidelines, such as:
+
+- Fork the repository.
+- Make changes.
+- Submit a pull request.
+
+API Reference
+=============
+
+Provide detailed information about the project's API, including:
+
+- Function names
+- Arguments
+- Return values
+- Example usage
+
+FAQ
+===
+
+Include frequently asked questions and their answers.
+
+Glossary
+========
+
+Define key terms or jargon used in the project.
+
+Index
+=====
+
+.. toctree::
+   :maxdepth: 1
+
+   glossary
+
