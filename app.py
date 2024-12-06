@@ -48,7 +48,7 @@ def barcode_reader(image):
 
 # Streamlit app interface
 def main():
-    st.title("Unified Stock Management App")
+    st.title("Stock Management App")
     st.sidebar.header("Choose a Functionality")
     option = st.sidebar.selectbox("Select an operation:", ["Bounding Box Detection", "Barcode Reader"])
 
