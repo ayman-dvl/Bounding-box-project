@@ -13,7 +13,7 @@ custom_objects = {"mse": tf.keras.losses.MeanSquaredError()}
 def load_local_model(model_path):
     return load_model(model_path, custom_objects=custom_objects)
 
-model = load_local_model('C:/Users/___user___/Documents/Projects/stock_manage/model/model_object_detection.h5')
+model = load_local_model('C:/Users/___user___/Documents/Projects/stock_manage/bbox_model/model_object_detection.h5')
 
 # Function to draw bounding boxes and object name
 def draw_bounding_box_with_label(image, bbox, label, color=(255, 0, 0), thickness=2, font_scale=0.8, font=cv2.FONT_HERSHEY_SIMPLEX):
