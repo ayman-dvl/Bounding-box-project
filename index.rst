@@ -1,49 +1,67 @@
-Retriever-Augmented Generation (RAG)
-====================================
+Stock Management: Box Identification and Barcode Reader
+========================================================
 
-**Retriever-Augmented Generation** (RAG) is a technique that enhances the quality and relevance of generated text by incorporating a retriever. The retriever selects the most pertinent context from external documents, which then informs the generation process. This approach is valuable for producing accurate and contextually relevant responses, as it provides the model with focused context from external sources.
+This project automates the management of stock by identifying, scanning, and storing boxes in an appropriate shelf. The key components include box detection, batch code scanning, damaged box detection, and shelf space detection.
 
-Building a RAG-Powered Chatbot
-------------------------------
+Overview
+--------
 
-In this section, we demonstrate how to build a chatbot using RAG to answer questions based on a given context. We’ll use **Ollama models** and **embeddings** to create a simple Streamlit app capable of answering questions based on context ingested in a vector store database.
+The project is divided into four main steps:
 
-**Requirements**
-~~~~~~~~~~~~~~~~~
-
-To run this app, install the required dependencies using pip:
-
-.. code-block:: bash
-
-    $ pip install -r requirements.txt
-
-**Steps**
-~~~~~~~~~
-
-1. **Ingesting Documents**: 
-   - The ``ingest.py`` script processes documents from the ``documents`` folder. This script extracts text from documents, splits it into chunks, generates embeddings, and stores them in a Chroma vector database.
+1. **Box Detection**:
+   Ensures the presence of a box at the entry before proceeding to check if it is damaged.
    
-2. **Generating Answers**:
-   - The ``LLM.py`` script retrieves answers using the ingested database. Optionally, it can answer queries based on a PDF uploaded by the user.
+2. **Batch Code Scanner**:
+   Scans the barcode of each entering box for tracking and inventory management.
+   
+3. **Damaged Box Detection**:
+   A dataset of damaged boxes is used. If a box is not detected as damaged, it is assumed to be non-damaged.
 
-Ollama
-------
+4. **Shelf Space Detection**:
+   Predicts if a shelf has enough space to store the non-damaged box.
 
-Ollama is a library built on top of the Hugging Face Transformers library, offering an easy way to implement Retriever-Augmented Generation (RAG) in projects. With a simple API, Ollama enables seamless integration of any retriever and generator model from the Hugging Face model hub.
+Datasets
+--------
 
-You can download Ollama from its `official website <https://ollama.com/>`_.
+The labeled datasets used for training and testing were sourced from Roboflow in YOLOv11 format:
 
-Using Mistral with Ollama
--------------------------
+- `dataset_1`: Box Detection  
+  `https://universe.roboflow.com/yolov7-scbtt/box-detection-xuvru/dataset/1`
+  
+- `dataset_2`: Cardboard Box Detection  
+  `https://universe.roboflow.com/ece4191-xcxot/cardboard-box-detection-mxqjh/dataset/1`
 
-**Mistral** is a large language model available through Ollama, trained on a mix of supervised and unsupervised data. To use Mistral with Ollama, run the following command:
+- `dataset_3`: Box Detection  
+  `https://universe.roboflow.com/yolov3tiny/box-detection-f04xv/dataset/3`
 
-.. code-block:: bash
+Installation
+------------
 
-    $ ollama pull mistral
+Follow these steps to set up the environment for the project:
 
-**Mxbai-embed-large** was trained with no overlap of the MTEB data, which indicates that the model generalizes well across several domains, tasks, and text lengths when embedding your dataset. To use the ``mxbai-embed-large`` model with Ollama, run the following command:
+1. Create a virtual environment and activate it:
 
-.. code-block:: bash
+   .. code-block:: sh
+   
+      python -m venv (name of virtual environment)
+      .\(name of virtual environment)\Scripts\activate
 
-    $ ollama pull mxbai-embed-large
+2. Install required dependencies:
+
+   .. code-block:: sh
+   
+      pip install pipreqs
+      pip install -r requirements.txt
+
+Deployment
+----------
+
+Use Streamlit to deploy the models. Run the following command:
+
+.. code-block:: sh
+   
+   streamlit run app.py
+
+Thank You!
+----------
+We appreciate your attention and hope this project meets your expectations!
