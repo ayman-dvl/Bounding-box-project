@@ -17,7 +17,7 @@ The approach would be divided into the creation of three CNN detection models (o
 - Shelf space detection (it's gonna predict if a shelf has space to pack the non damaged box there)
 
 **Author(s):**  
-Your Name or Team Name.
+AIT ABDOU AYMAN & OUHSSAIN ANOUAR.
 
 **Version:**  
 v1.0.0
@@ -39,68 +39,68 @@ Table of Contents
    api_reference
    faq
 
-Introduction
-============
+IStock Management: Box Identification and Barcode Scanner
+=========================================================
 
-Provide an overview of the project, its goals, and its use cases.
+Overview
+--------
 
-Key Features
-------------
-- Feature 1
-- Feature 2
-- Feature 3
+This project automates warehouse management by identifying, scanning, and sorting boxes into appropriate shelves. It focuses on non-damaged boxes and ensures efficient storage by detecting available shelf space.
+
+The approach is divided into the creation of three CNN detection models (with only one currently included) and a batch number scanner:
+
+- **Box Detection**: Ensures there is a box at the entry before processing to check for damages.
+- **Batch Code Scanner**: Scans the barcode of each entering box.
+- **Damaged Box Detection**: Uses a dataset of damaged boxes for comparison. If damage is not detected, the box is deemed undamaged. This works in conjunction with the first model (Box Detection).
+- **Shelf Space Detection**: Predicts whether a shelf has enough space to store the non-damaged box.
+
+Features
+--------
+
+- **Box Identification**
+- **Barcode Scanning**
+- **Damage Detection**
+- **Shelf Space Prediction**
+
+Dataset Used for Training
+-------------------------
+
+The datasets used were sourced from Roboflow and are labeled in YOLOv11 format.
+
+Links to datasets:
+
+- `Dataset 1 <https://universe.roboflow.com/yolov7-scbtt/box-detection-xuvru/dataset/1>`_
+- `Dataset 2 <https://universe.roboflow.com/ece4191-xcxot/cardboard-box-detection-mxqjh/dataset/1>`_
+- `Dataset 3 <https://universe.roboflow.com/yolov3tiny/box-detection-f04xv/dataset/3>`_
 
 Installation
-============
+------------
 
-Provide step-by-step instructions on how to install the project.
+For production environments, follow these steps:
+
+1. Create a virtual environment and activate it.
+2. Install the required dependencies.
+
+Run the following commands:
 
 .. code-block:: bash
 
-   pip install your-project
+    pip install pipreqs
+    python -m venv (name_of_virtual_environment)
+    .\(name_of_virtual_environment)\Scripts\activate
+    pip install -r requirements.txt
 
-Usage
-=====
+Streamlit Deployment for the Models
+------------------------------------
 
-Explain how to use your project, with examples.
+To deploy the models using Streamlit, use the following command:
 
-.. code-block:: python
+.. code-block:: bash
 
-   from your_project import main_function
-   main_function()
+    streamlit run app.py
 
-Contributing
-============
-
-Outline how others can contribute to the project. Include guidelines, such as:
-
-- Fork the repository.
-- Make changes.
-- Submit a pull request.
-
-API Reference
-=============
-
-Provide detailed information about the project's API, including:
-
-- Function names
-- Arguments
-- Return values
-- Example usage
-
-FAQ
-===
-
-Include frequently asked questions and their answers.
-
-Glossary
-========
-
-Define key terms or jargon used in the project.
-
-Index
-=====
-
+Thank you for your attention!
+-----------------------------
 .. toctree::
    :maxdepth: 1
 
