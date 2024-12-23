@@ -17,7 +17,7 @@ Your Name or Team Name.
 v1.0.0
 
 **License:**  
-Specify the license type (e.g., MIT, Apache 2.0).
+Not licensed.
 
 Table of Contents
 =================
