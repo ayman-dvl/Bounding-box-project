@@ -73,9 +73,7 @@ def process_image(image, model, target_size=(128, 128)):
 
 # Streamlit app interface
 def main():
-    st.title("Stock Management App")
-    st.sidebar.header("Choose a Functionality")
-    option = st.sidebar.selectbox("Select an operation:", ["Detect Box and Barcode"])
+    st.title("Box & Barcode Detection App")
 
     st.sidebar.header("Upload Image")
     uploaded_file = st.sidebar.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
@@ -84,17 +82,16 @@ def main():
         image = Image.open(uploaded_file)
         st.image(image, caption="Uploaded Image", use_column_width=True)
 
-        if option == "Detect Box and Barcode":
-            st.write("Processing the image for bounding box detection and barcode reading...")
-            
-            # Process the image to detect both bounding boxes and barcode
-            img_with_bbox, bbox_scaled, label = process_image(image, model)
+        st.write("Processing the image for bounding box detection and barcode reading...")
+        
+        # Process the image to detect both bounding boxes and barcode
+        img_with_bbox, bbox_scaled, label = process_image(image, model)
 
-            st.write("### Predicted Bounding Box Coordinates and Class:")
-            st.write(f"x_min: {bbox_scaled[0]}, y_min: {bbox_scaled[1]}, x_max: {bbox_scaled[2]}, y_max: {bbox_scaled[3]}")
-            st.write(f"Predicted Class: {label}")
+        st.write("### Predicted Bounding Box Coordinates and Class:")
+        st.write(f"x_min: {bbox_scaled[0]}, y_min: {bbox_scaled[1]}, x_max: {bbox_scaled[2]}, y_max: {bbox_scaled[3]}")
+        st.write(f"Predicted Class: {label}")
 
-            st.image(img_with_bbox, caption="Processed Image with Bounding Box and Barcode", use_column_width=True)
+        st.image(img_with_bbox, caption="Processed Image with Bounding Box and Barcode", use_column_width=True)
 
     else:
         st.write("Upload an image file to start.")
