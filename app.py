@@ -46,11 +46,36 @@ def barcode_reader(image):
     output_img = cv2.cvtColor(output_img, cv2.COLOR_BGR2RGB)
     return output_img
 
+# Unified function to process both bounding box and barcode detection
+def process_image(image, model, target_size=(128, 128)):
+    img_array = np.array(image)
+    original_size = img_array.shape[:2]
+    
+    # Bounding Box Prediction
+    img_resized = cv2.resize(img_array, target_size)
+    img_normalized = img_resized / 255.0
+    img_batch = np.expand_dims(img_normalized, axis=0)
+
+    bbox_pred, class_pred = model.predict(img_batch)
+    h_scale = original_size[0] / target_size[0]
+    w_scale = original_size[1] / target_size[1]
+    bbox_scaled = bbox_pred[0] * [w_scale, h_scale, w_scale, h_scale]
+    bbox_scaled = bbox_scaled.astype(int)
+    label = str(class_pred[0])
+
+    # Barcode Reading
+    output_img = barcode_reader(image)
+
+    # Draw the predicted bounding box on the image
+    img_with_bbox = draw_bounding_box_with_label(output_img.copy(), bbox_scaled, label)
+    
+    return img_with_bbox, bbox_scaled, label
+
 # Streamlit app interface
 def main():
     st.title("Stock Management App")
     st.sidebar.header("Choose a Functionality")
-    option = st.sidebar.selectbox("Select an operation:", ["Bounding Box Detection", "Barcode Reader"])
+    option = st.sidebar.selectbox("Select an operation:", ["Detect Box and Barcode"])
 
     st.sidebar.header("Upload Image")
     uploaded_file = st.sidebar.file_uploader("Choose an image file", type=["jpg", "jpeg", "png"])
@@ -59,34 +84,17 @@ def main():
         image = Image.open(uploaded_file)
         st.image(image, caption="Uploaded Image", use_column_width=True)
 
-        if option == "Bounding Box Detection":
-            st.write("Processing the image for bounding box detection...")
-            target_size = (128, 128)  # Replace with your model's input size
-            img_array = np.array(image)
-            original_size = img_array.shape[:2]
-            img_resized = cv2.resize(img_array, target_size)
-            img_normalized = img_resized / 255.0
-            img_batch = np.expand_dims(img_normalized, axis=0)
-
-            st.write("Running prediction...")
-            bbox_pred, class_pred = model.predict(img_batch)
-            h_scale = original_size[0] / target_size[0]
-            w_scale = original_size[1] / target_size[1]
-            bbox_scaled = bbox_pred[0] * [w_scale, h_scale, w_scale, h_scale]
-            bbox_scaled = bbox_scaled.astype(int)
-            label = str(class_pred[0])
+        if option == "Detect Box and Barcode":
+            st.write("Processing the image for bounding box detection and barcode reading...")
+            
+            # Process the image to detect both bounding boxes and barcode
+            img_with_bbox, bbox_scaled, label = process_image(image, model)
 
             st.write("### Predicted Bounding Box Coordinates and Class:")
             st.write(f"x_min: {bbox_scaled[0]}, y_min: {bbox_scaled[1]}, x_max: {bbox_scaled[2]}, y_max: {bbox_scaled[3]}")
             st.write(f"Predicted Class: {label}")
 
-            img_with_bbox = draw_bounding_box_with_label(img_array.copy(), bbox_scaled, label)
-            st.image(img_with_bbox, caption="Image with Predicted Bounding Box and Label", use_column_width=True)
-
-        elif option == "Barcode Reader":
-            st.write("Processing the image for barcode reading...")
-            output_img = barcode_reader(image)
-            st.image(output_img, caption="Processed Image with Barcode Highlighted", use_column_width=True)
+            st.image(img_with_bbox, caption="Processed Image with Bounding Box and Barcode", use_column_width=True)
 
     else:
         st.write("Upload an image file to start.")
