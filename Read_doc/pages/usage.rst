@@ -14,7 +14,7 @@ If you want to train your own model for the bounding box detection, follow the s
 Check your dataset
 ------------------
 1. change paths in the code to the path of the dataset you want to check.
-.. image:: images\folders_paths.jpg
+.. image:: pages/images/folders_paths.jpg
     :alt: paths to folders
     :width: 600px
     :align: center
@@ -40,7 +40,8 @@ The folder structure should look like this:
     └── val/
         ├── images/
         └── labels/
-.. image:: images\train_val_folders.jpg
+
+.. image:: pages/images/train_val_folders.jpg
     :alt: paths to training and validation folders
     :width: 600px
     :align: center
@@ -53,7 +54,7 @@ The folder structure should look like this:
 Evaluate the model
 ------------------
 1. change paths in the code to the path of the dataset you want to evaluate the model on.
-.. image:: images\model_info_paths.jpg
+.. image:: pages/images/model_info_paths.jpg
     :alt: paths to model and test image
     :width: 600px
     :align: center
