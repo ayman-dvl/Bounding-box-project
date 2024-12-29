@@ -1,5 +1,8 @@
+Usage
+=====
+
 Streamlit Deployment for the bounding box Models
-================================================
+-----------------------------------------------
 
 To deploy the models using Streamlit, use the following command in terminal:
 
@@ -8,11 +11,11 @@ To deploy the models using Streamlit, use the following command in terminal:
     streamlit run app.py
 
 Train your own model for the bounding box detection
-===================================================
+---------------------------------------------------
 If you want to train your own model for the bounding box detection, follow the steps below:
 
 Check your dataset
-------------------
+~~~~~~~~~~~~~~~~~~	
 1. change paths in the code to the path of the dataset you want to check.
 
 .. figure:: pages/images/folders_paths.pnj
@@ -27,7 +30,7 @@ Check your dataset
     streamlit run dataset_sample_check.py
 
 Train the model
----------------
+~~~~~~~~~~~~~~~	
 1. change paths in the code to the path of the dataset you want to train the model on.
 The dataset should be divided into training and validation folders.
 And each folder should contain the images and the labels.
@@ -55,7 +58,7 @@ The folder structure should look like this:
     streamlit run model_train.py
 
 Evaluate the model
-------------------
+~~~~~~~~~~~~~~~~~~
 1. change paths in the code to the path of the dataset you want to evaluate the model on.
 
 .. figure:: pages/images/model_info_paths.pnj
