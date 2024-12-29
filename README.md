@@ -4,7 +4,7 @@
 
 
 
-
+This project is still under development, but you can use some features and python functions to handle YOLO format datasets and to train models for bounding box detection using tensorflow framework.
 
 The base of this project is to take non-damaged boxes and store them into a shelf that contains enough space for that box to be packed.
 The approach would be divided into the creation of three CNN detection models (only one is included so far) and a Batch number scanner :
@@ -23,27 +23,6 @@ The dataset we used was taken from roboflow . It is a labelised data with a YOLO
 [dataset_1](https://universe.roboflow.com/yolov7-scbtt/box-detection-xuvru/dataset/1)
 [dataset_2](https://universe.roboflow.com/ece4191-xcxot/cardboard-box-detection-mxqjh/dataset/1)
 [dataset_3](https://universe.roboflow.com/yolov3tiny/box-detection-f04xv/dataset/3)
-
-
-
-## Installation
-
-For production environments, creation of a virtual environment and Scripts activation...
-
-```sh
-pip install pipreqs
-python -m venv (name of virtual environement)
-.\(name of virtual environment)\Scripts\activate
-pip install -r requirements.txt
-```
-
-
-
-Streamlit Deployment for the Models.
-
-```sh
-streamlit run app.py
-```
 
 
 
