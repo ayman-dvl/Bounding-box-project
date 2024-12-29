@@ -35,9 +35,7 @@ Table of Contents
    introduction
    installation
    usage
-   contributing
-   api_reference
-   faq
+   development
 
 IStock Management: Box Identification and Barcode Scanner
 =========================================================
@@ -51,16 +49,12 @@ The approach is divided into the creation of three CNN detection models (with on
 
 - **Box Detection**: Ensures there is a box at the entry before processing to check for damages.
 - **Batch Code Scanner**: Scans the barcode of each entering box.
-- **Damaged Box Detection**: Uses a dataset of damaged boxes for comparison. If damage is not detected, the box is deemed undamaged. This works in conjunction with the first model (Box Detection).
-- **Shelf Space Detection**: Predicts whether a shelf has enough space to store the non-damaged box.
 
 Features
 --------
 
 - **Box Identification**
 - **Barcode Scanning**
-- **Damage Detection**
-- **Shelf Space Prediction**
 
 Dataset Used for Training
 -------------------------
