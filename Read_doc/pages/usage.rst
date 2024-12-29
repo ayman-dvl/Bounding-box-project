@@ -14,12 +14,14 @@ If you want to train your own model for the bounding box detection, follow the s
 Check your dataset
 ------------------
 1. change paths in the code to the path of the dataset you want to check.
+
 .. image:: pages/images/folders_paths.jpg
     :alt: paths to folders
     :width: 600px
     :align: center
 
 2. run the code in terminal
+
 .. code-block:: bash
 
     streamlit run dataset_sample_check.py
@@ -47,6 +49,7 @@ The folder structure should look like this:
     :align: center
 
 2. run the code in terminal
+
 .. code-block:: bash
 
     streamlit run model_train.py
@@ -54,11 +57,14 @@ The folder structure should look like this:
 Evaluate the model
 ------------------
 1. change paths in the code to the path of the dataset you want to evaluate the model on.
+
 .. image:: pages/images/model_info_paths.jpg
     :alt: paths to model and test image
     :width: 600px
     :align: center
+
 2. run the code in terminal
+
 .. code-block:: bash
 
     streamlit run model_test.py
