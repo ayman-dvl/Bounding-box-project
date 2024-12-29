@@ -113,8 +113,8 @@ def test_model(model, image_path):
 # Main function to test the model
 if __name__ == "__main__":
     # Path to the trained model and image
-    model_path = 'C:/Users/___user___/Documents/Projects/stock_manage/model/model_object_detection.h5'
-    image_path = 'C:/Users/___user___/Documents/Projects/box_detect/test/images/2-jpg__jpg-jpganti-clockwise_jpg.rf.c1573a3fb5b257bba7939c75d387086e.jpg'
+    model_path = 'C:/Users/___user___/Documents/Projects/stock_manage/bbox_model/model_object_detection.h5'
+    image_path = 'C:/Users/___user___/Documents/Projects/Screenshot 2024-12-05 205952.jpg'
 
     # Load the model
     model = load_model_from_local(model_path)

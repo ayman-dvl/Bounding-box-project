@@ -4,7 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-def yolo_data_generator(image_folder, label_folder, batch_size=32, target_size=(128, 128)):
+
+
+def yolo_data_generator(image_folder, label_folder,batch_size=32, target_size=(128, 128)):
     image_files = sorted(f for f in os.listdir(image_folder) if f.endswith(('.png', '.jpg', '.jpeg')))
     label_files = sorted(f for f in os.listdir(label_folder) if f.endswith('.txt'))
     
@@ -89,20 +91,22 @@ def yolo_data_generator(image_folder, label_folder, batch_size=32, target_size=(
             ax = plt.gca()
             # Ensure that batch_classes[idx] is iterable (list of class labels)
             for bbox, class_id in zip(batch_bboxes, batch_classes):
-                # Convert to YOLO format
+                # Convert YOLO format to pixel coordinates
                 x_center, y_center, width, height = bbox
+                x_min = x_center - width / 2
+                y_min = y_center - height / 2
 
                 # Plot bounding box
-                rect = plt.Rectangle((x_center - width / 2, y_center - height / 2), width, height,
+                rect = plt.Rectangle((x_min, y_min), width, height,
                                     linewidth=2, edgecolor='r', facecolor='none')
                 ax.add_patch(rect)
 
                 # Add class label text near the box
-                plt.text(x_center - width / 2, y_center - height / 2 - 5, f'Class {class_id}', color='red', fontsize=12)
-
+                plt.text(x_min, y_min - 5, f'Class {class_id}', color='red', fontsize=12)
 
             plt.axis('off')
             plt.show()
+
 
             # Yield the batch of images and corresponding labels
             yield (np.array(batch_images),
@@ -118,7 +122,7 @@ def main():
     # Create an instance of the data generator
     batch_size = 32
     target_size = (128, 128)
-    generator = yolo_data_generator(image_folder, label_folder, batch_size, target_size)
+    generator = yolo_data_generator(image_folder, label_folder,batch_size, target_size)
 
     # Get a single batch of data
     images, labels = next(generator)
