@@ -32,40 +32,14 @@ Table of Contents
    :maxdepth: 2
    :caption: Contents:
 
-   introduction
-   installation
-   usage
-   development
+   pages/overview
+   pages/installation
+   pages/usage
+   pages/contributing
 
 IStock Management: Box Identification and Barcode Scanner
 =========================================================
 
-Overview
---------
-
-This project automates warehouse management by identifying, scanning, and sorting boxes into appropriate shelves. It focuses on non-damaged boxes and ensures efficient storage by detecting available shelf space.
-
-The approach is divided into the creation of three CNN detection models (with only one currently included) and a batch number scanner:
-
-- **Box Detection**: Ensures there is a box at the entry before processing to check for damages.
-- **Batch Code Scanner**: Scans the barcode of each entering box.
-
-Features
---------
-
-- **Box Identification**
-- **Barcode Scanning**
-
-Dataset Used for Training
--------------------------
-
-The datasets used were sourced from Roboflow and are labeled in YOLOv11 format.
-
-Links to datasets:
-
-- `Dataset 1 <https://universe.roboflow.com/yolov7-scbtt/box-detection-xuvru/dataset/1>`_
-- `Dataset 2 <https://universe.roboflow.com/ece4191-xcxot/cardboard-box-detection-mxqjh/dataset/1>`_
-- `Dataset 3 <https://universe.roboflow.com/yolov3tiny/box-detection-f04xv/dataset/3>`_
 
 Installation
 ------------
@@ -99,4 +73,3 @@ Thank you for your attention!
    :maxdepth: 1
 
    glossary
-

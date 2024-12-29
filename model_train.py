@@ -6,10 +6,10 @@ import numpy as np
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import cv2
 
-train_image = 'C:/Users/___user___/Documents/Projects/box_detect/train/images'
-train_label = 'C:/Users/___user___/Documents/Projects/box_detect/train/labels'
-val_image = 'C:/Users/___user___/Documents/Projects/box_detect/valid/images'
-val_label = 'C:/Users/___user___/Documents/Projects/box_detect/valid/labels'
+train_label = '../train/labels'
+train_image = '../train/images'
+val_image = '../valid/images'
+val_label = '../valid/labels'
 
 # Custom YOLO Data Generator with error handling and padding for incorrect labels
 def yolo_data_generator(image_folder, label_folder, batch_size=32, target_size=(128, 128)):

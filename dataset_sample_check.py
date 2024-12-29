@@ -116,8 +116,8 @@ def yolo_data_generator(image_folder, label_folder,batch_size=32, target_size=(1
 
 def main():
     # Set the paths to the image and label folders
-    image_folder = 'C:/Users/___user___/Documents/Projects/datasets/boxes/train/images'  # Replace with the actual path to your images
-    label_folder = 'C:/Users/___user___/Documents/Projects/datasets/boxes/train/labels'  # Replace with the actual path to your labels
+    image_folder = '../train/images'  # Replace with the actual path to your images
+    label_folder = '../train/labels'  # Replace with the actual path to your labels
 
     # Create an instance of the data generator
     batch_size = 32

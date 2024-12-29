@@ -112,9 +112,10 @@ def test_model(model, image_path):
 
 # Main function to test the model
 if __name__ == "__main__":
+    
     # Path to the trained model and image
-    model_path = 'C:/Users/___user___/Documents/Projects/stock_manage/bbox_model/model_object_detection.h5'
-    image_path = 'C:/Users/___user___/Documents/Projects/Screenshot 2024-12-05 205952.jpg'
+    model_path = '../model_object_detection.h5' # Change this to your model path
+    image_path = '../test_image.jpg' # Change this to your image path
 
     # Load the model
     model = load_model_from_local(model_path)
