@@ -13,6 +13,8 @@ The approach would be divided into the creation of three CNN detection models (o
 - Batch Code scanner (to scan the barcode of each entering box)
 - Damaged box Detection (here we're not gonna go for a classification methodology , instead we're gonna upload a dataset of damaged boxes and if he doesnt detect it , it means that the box is in fact not damaged , thanks to the first layer of our process which is the first model of box detection)
 - Shelf space detection (it's gonna predict if a shelf has space to pack the non damaged box there)
+- Here is the pipeline followed for our project as mentionned earlier 
+![Capture](https://github.com/user-attachments/assets/b62e0636-3520-40b8-91d6-d740a3aa4231)
 
 ## Features
 
