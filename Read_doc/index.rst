@@ -37,39 +37,4 @@ Table of Contents
    pages/usage
    pages/contributing
 
-IStock Management: Box Identification and Barcode Scanner
-=========================================================
 
-
-Installation
-------------
-
-For production environments, follow these steps:
-
-1. Create a virtual environment and activate it.
-2. Install the required dependencies.
-
-Run the following commands:
-
-.. code-block:: bash
-
-    pip install pipreqs
-    python -m venv (name_of_virtual_environment)
-    .\(name_of_virtual_environment)\Scripts\activate
-    pip install -r requirements.txt
-
-Streamlit Deployment for the Models
-------------------------------------
-
-To deploy the models using Streamlit, use the following command:
-
-.. code-block:: bash
-
-    streamlit run app.py
-
-Thank you for your attention!
------------------------------
-.. toctree::
-   :maxdepth: 1
-
-   glossary

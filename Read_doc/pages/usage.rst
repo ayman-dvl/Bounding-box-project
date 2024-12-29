@@ -15,7 +15,7 @@ Check your dataset
 ------------------
 1. change paths in the code to the path of the dataset you want to check.
 
-.. image:: pages/images/folders_paths.pnj
+.. figure:: pages/images/folders_paths.pnj
     :alt: paths to folders
     :width: 600px
     :align: center
@@ -43,7 +43,7 @@ The folder structure should look like this:
         ├── images/
         └── labels/
 
-.. image:: pages/images/train_val_folders.pnj
+.. figure:: pages/images/train_val_folders.pnj
     :alt: paths to training and validation folders
     :width: 600px
     :align: center
@@ -58,7 +58,7 @@ Evaluate the model
 ------------------
 1. change paths in the code to the path of the dataset you want to evaluate the model on.
 
-.. image:: pages/images/model_info_paths.pnj
+.. figure:: pages/images/model_info_paths.pnj
     :alt: paths to model and test image
     :width: 600px
     :align: center
