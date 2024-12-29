@@ -48,7 +48,7 @@ The folder structure should look like this:
 
 .. figure:: images/train_val_folders.pnj
     :alt: paths to training and validation folders
-    :width: 600px
+    :width: 300px
     :align: center
 
 2. run the code in terminal
