@@ -1,4 +1,4 @@
-#Read_The_Doc
+
 
 ## Stock management: Box identification and codebar reader
 
@@ -16,15 +16,8 @@ The approach would be divided into the creation of three CNN detection models (o
 - Here is the pipeline followed for our project as mentionned earlier 
 ![Capture](https://github.com/user-attachments/assets/b62e0636-3520-40b8-91d6-d740a3aa4231)
 
-## Features
-
-## Dataset used for training
-The dataset we used was taken from roboflow . It is a labelised data with a YOLOv11 format
-
-> Links of datasets
-[dataset_1](https://universe.roboflow.com/yolov7-scbtt/box-detection-xuvru/dataset/1)
-[dataset_2](https://universe.roboflow.com/ece4191-xcxot/cardboard-box-detection-mxqjh/dataset/1)
-[dataset_3](https://universe.roboflow.com/yolov3tiny/box-detection-f04xv/dataset/3)
+## Read the docs
+[Documentation](https://bounding-box-project.readthedocs.io/en/master/index.html)
 
 
 
